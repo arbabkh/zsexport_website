@@ -30,7 +30,7 @@ export default function About() {
           <div className="lg:col-span-6 flex flex-col lg:pl-space-xl">
             <Reveal>
               <span className="font-label-caps text-label-caps uppercase tracking-[0.2em] text-secondary font-semibold mb-space-xs block">
-                Heritage &bull; Moradabad &bull; 1986
+                Heritage &bull; Moradabad &bull; 2011
               </span>
               <h2 className="font-headline-lg text-headline-lg text-on-surface mb-space-lg leading-tight">
                 The Living Foundry of Peetal Nagri
@@ -40,7 +40,7 @@ export default function About() {
               <p className="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
                 Moradabad, renowned across the subcontinent for over four centuries as the &ldquo;Brass City&rdquo;
                 (Peetal Nagri), holds a lineage of metallurgical knowledge found nowhere else on earth. Founded here
-                in 1986, {BRAND.name} began with a modest bank of sand-casting pits and a fierce commitment to
+                in 2011, {BRAND.name} began with a modest bank of sand-casting pits and a fierce commitment to
                 preserving ancestral hand-forming arts.
               </p>
             </Reveal>

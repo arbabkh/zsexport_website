@@ -17,7 +17,7 @@ export default function Footer() {
             </div>
             <p className="font-body-md text-body-md text-on-surface-variant max-w-sm mb-space-lg leading-relaxed">
               Forging artisanal excellence and heavy cast metalwork from Moradabad&rsquo;s historic foundry district
-              since 1986. Trusted by luxury hospitality groups, architectural specifiers, and global retail brands
+              since 2011. Trusted by luxury hospitality groups, architectural specifiers, and global retail brands
               worldwide.
             </p>
             <div className="flex flex-wrap gap-space-xs">
@@ -93,7 +93,7 @@ export default function Footer() {
         </Reveal>
 
         <div className="mt-space-3xl pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md font-label-spec text-label-spec text-on-surface-variant">
-          <p>&copy; 1986&ndash;2026 {BRAND.legalName} All rights reserved.</p>
+          <p>&copy; 2011&ndash;2026 {BRAND.legalName} All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-space-lg">
             <a className="hover:text-on-surface transition-colors" href="#">
               Privacy Policy

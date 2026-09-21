@@ -25,7 +25,7 @@ export default function Hero() {
             >
               <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim" />
               <span className="font-label-caps text-label-caps uppercase tracking-[0.16em] text-on-surface-variant font-medium">
-                Est. 1986 &bull; Moradabad Foundry &amp; Atelier &bull; Exporting to 48+ Nations
+                Est. 2011 &bull; Moradabad Foundry &amp; Atelier &bull; Exporting to 48+ Nations
               </span>
             </Reveal>
 

@@ -1,7 +1,7 @@
 export const BRAND = {
   name: 'ZS Export',
   initial: 'Z',
-  tagline: 'Foundry Est. 1986',
+  tagline: 'Foundry Est. 2011',
   legalName: 'ZS Export Pvt. Ltd.',
   email: 'exports@zsexport.com',
   phone: '+91 (0) 591 249 5890',
