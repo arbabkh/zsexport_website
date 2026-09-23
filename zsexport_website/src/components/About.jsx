@@ -49,7 +49,7 @@ export default function About() {
                 Over thirty-eight years, we transformed from an artisanal guild workshop into a globally certified
                 manufacturing juggernaut. Today, our 120,000 sq. ft. campus bridges generational{' '}
                 <em>Thathere</em> sheet-hammering techniques with ISO-controlled metallurgical testing, automated
-                lathe profiling, and Sedex-audited ethical production.
+                lathe profiling, and Vriksh Certified ethical production.
               </p>
             </Reveal>
 

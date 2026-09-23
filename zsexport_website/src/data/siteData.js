@@ -4,8 +4,8 @@ export const BRAND = {
   tagline: 'Foundry Est. 2011',
   legalName: 'ZS Export Pvt. Ltd.',
   email: 'exports@zsexport.com',
-  phone: '+91 (0) 591 249 5890',
-  address: 'Sambhal Road, Moradabad - 244001, Uttar Pradesh, India',
+  phone: '+91 74172 07839',
+  address: '38, Deputy Ganj, Near Meritorious Children Academy, Moradabad - 244001, Uttar Pradesh, India',
 }
 
 export const NAV_LINKS = [
@@ -26,66 +26,126 @@ export const HERO_STATS = [
   { value: '500+', label: 'Master Guild Artisans' },
 ]
 
-export const CATEGORIES = [
+export const PRODUCT_GALLERY = [
   {
-    tag: 'Cast Brass C36000',
-    eyebrow: 'Maritime Heritage',
-    title: 'Nautical Hardware',
+    id: 1,
+    tag: 'Cast Brass & Hand-Blown Glass',
+    eyebrow: 'Architectural Lighting',
+    title: 'Wall-Mount Ship Lantern',
     description:
-      'Solid cast marine brass sextants, gimballed ship binnacles, engine telegraphs, and weatherized porthole instruments.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCEnpn3kKfH8b328d31nk1hlmB8sRrLN9f2jUyTI5sIp7Xg2hqc5hOVIZ4fGcOxH-9_fu1SY1PzP2UdZklpUI3l7K_HXE8GZ8I5Pf1pl3dhZxIVDWCGKdlgLP3KTHnNFgS2zplOXIH4oHIso6u2SfRhS3-xnOFYvnJmzLHvepfjqrCR2lvJwy_5TyRn9NyAsL2yBjlV6i_aXRrfsDY6XKyJkvN2L5O-y1Du7hAcJ931VpJxXqjLAzhITw',
-    alt: 'Bespoke solid cast marine brass sextants and heavy polished nautical binnacle compass hardware with precision millwork and glass optics in an artful architectural gallery setting.',
+      'Cross-braced brass hurricane lantern with a wrought hanger hook, glazed on four faces for a steady, weatherproof flame.',
+    image: '/products/product_1.webp',
+    alt: 'Brass hurricane wall lantern with cross-braced glass panels hung on a stone wall, candle lit within.',
   },
   {
-    tag: 'UL / CE Compliant',
-    eyebrow: 'Illumination',
-    title: 'Architectural Lighting',
-    description:
-      'Hand-hammered brass suspension chandeliers, articulating wall sconces, heavy task lamps, and monolithic pendant fixtures.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDjieWtHae24Uat67o_Veso2yuv1OeDplMsDBuwW1mCmknA3P_pV1Es4T1kfCAInMvWwI4jKSeoC--0FoWb8Eux2coqzcq4AIrkWUQvurn3bUTQcsW-5ZAzdQ5wql-bCxzSDzncG9mkIEh-L4i-5fjpXb6zWuOZ8WlBtDB3y0NqZTbExIJRXMp-MWi74oBAX1lvtxrcYRxr-CRjyun7M_XnlyL6iY8WjV8OLkASe48yEeLnP2HFIhqdMQ',
-    alt: 'Dramatic architectural hand-hammered raw brass chandelier and linear fluted wall sconce casting warm amber ambient shadows in a high-end luxury minimalist interior.',
-  },
-  {
-    tag: 'Pure Copper & Tin',
-    eyebrow: 'Hospitality & Bar',
-    title: 'Kitchen & Barware',
-    description:
-      'Heavy copper champagne troughs, double-walled brass ice buckets, handcrafted serveware, and food-grade tin-lined casseroles.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpCQoJT7ypPvdui5n1LS6EcPlmND2zbcYmtwEJBtyCZNWdZ3-mJuXdj7VUrU5kDjpamXMC72MxQERIMsS6bSmgxg9sRPPUnWTmNrdHhRdCBR7ApZQQ790klcFnpbLOSt-9jE_v5Tqu3NHUGgMpz-Y1q15LQYVIOuXaRjEPeXH-rteXCpcdsQaaHcHv_AV00niqRrsFJQdlQrXI-kOqFioZALCKPDvUz2DouI4xOErj9gcERF_lvr07Q',
-    alt: 'Artisanal heavy-gauge hand-hammered pure copper champagne cooler ice bucket and matching brass cocktail shakers with tin-lined interior on dark limestone surface.',
-  },
-  {
-    tag: 'Precision Threaded',
-    eyebrow: 'Memorial Arts',
-    title: 'Memorial Keepsakes',
-    description:
-      'Precision lathe-threaded adult urns, companion vessels, and hand-engraved memorial keepsakes with airtight sealing.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAE5FfinipttCIX9pJD1VGK_4_MzTWgluh9c6C4U56vrc73PQqids--dJv5vOO3K9EJPgQbpkwpfVej1LElc_bWH9cDvdPzFvXbqfr59b5_jjEJT-I0YZsRjmuld1Yq1e2TU7cd7scNNf59yidUX6aETB7CwnbfafG9OCYUsLnKFf3rodTcU5BXfjYfHtjD24xDrFpPxuY58Kf-vgPb2KN9xoq-CMIgWOODH8oWdngaA5X2tIfM--IaMQ',
-    alt: 'Elegantly engraved brass and bronze cremation urn with deep midnight enamel inlays and precision threaded secure lid seated against warm linen background.',
-  },
-  {
-    tag: 'Structural Foundry Iron',
-    eyebrow: 'Contract Accents',
-    title: 'Accent Furniture',
-    description:
-      'Cast iron drinks tables, bronze console bases, hammered cocktail table plinths, and architectural étagère frames.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC-py_usRBPMbYuG5RqQNP1WeoaVgR17xVpYI0VI0iGty3prX96wfH6t6UDCnGrY4V3-cuU-eQwETL4nxf9xtWn_7hNn3lxaVqVQ-bfHAzzKglthnHzYMe8nA9hLyDlfxevfDxYpDaaPDhAfXrC2YOTbS9-Z7oqiw0lsNCELSOKtHm_o7-X2FNhLlv8sWQTHG0_YbUMYKuHTFKo1jYreiXN4I4d0257zA2f7hCwO95RP2uAiOq2wrqcaQ',
-    alt: 'Monolithic sand-cast iron side table and patinated bronze console frame with textured cast surface supporting a raw slab of travertine in an architectural loft.',
-  },
-  {
+    id: 2,
     tag: 'Lost-Wax Cire Perdue',
     eyebrow: "Objets D'Art",
-    title: 'Decorative Accessories',
+    title: 'Sculptural Dolphin Figure',
     description:
-      'Sculptural tabletop vessels, organic lost-wax candleholders, bookends, and brutalist geometric pedestals.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBTLrU1RF4wa9D5UdjKxM9bUsHECXf6DyRBf9J6in8JObmCd_LVoLUpBOl136po1PTvtgY2kro_b7Uek-mNcaL7Bt9h2C8_U1vJiVV4aaFKmQ9STrBd3agla8YKeKqJG-WdpZZsyIy3lUBb_ay2byzeI6dHrPhQYGu5y5a19KEuhda2XPt8ZhFbhiB-Fn8qm6iLCO1Yz5fySpAJvuDXp8b2hvqo5pSjl7jNWjboLEIE0JUm-55CKE52_w',
-    alt: 'Collection of sculptural lost-wax bronze organic tabletop objects, cast brass candle holders, and raw stone-textured bowls arranged in an art exhibition space.',
+      'Verdigris-patinated bronze dolphin cast mid-leap, mounted on a blackened steel plinth for console and shelf display.',
+    image: '/products/product_2.webp',
+    alt: 'Verdigris bronze dolphin sculpture on a black stand atop a walnut console table.',
+  },
+  {
+    id: 3,
+    tag: 'Cast Pewter & Glass',
+    eyebrow: 'Tabletop Accents',
+    title: 'Starfish Hurricane Holder',
+    description:
+      'Hand-cast pewter starfish base cradling a blown-glass hurricane, styled for mantels and formal tablescapes.',
+    image: '/products/product_3.webp',
+    alt: 'Silver cast starfish hurricane candle holder with a glass shade on a wooden table beside antique books.',
+  },
+  {
+    id: 4,
+    tag: 'Brass & Mother-of-Pearl',
+    eyebrow: 'Maritime Heritage',
+    title: 'Opera Field Glasses',
+    description:
+      'Aged-brass binoculars set in genuine mother-of-pearl barrels, finished with a braided wrist strap and precision optics.',
+    image: '/products/product_4.webp',
+    alt: 'Antique brass and mother-of-pearl opera binoculars resting on a dark slate surface.',
+  },
+  {
+    id: 5,
+    tag: 'Cast Brass & Glass',
+    eyebrow: 'Desk & Study',
+    title: 'Brass Sand Timer',
+    description:
+      'Turned brass hourglass with fluted end caps and blackened sand, a weighted keepsake for the desk or mantel.',
+    image: '/products/product_5.webp',
+    alt: 'Brass hourglass sand timer standing on a navy velvet cloth.',
+  },
+  {
+    id: 6,
+    tag: 'Brass-Capped Hardwood',
+    eyebrow: 'Furniture & Interiors',
+    title: 'Accent Side Table',
+    description:
+      'Walnut-topped side table on a powder-coated steel frame, engineered for compact living and lounge settings.',
+    image: '/products/product_6.webp',
+    alt: 'Round wood-top side table with black metal legs beside a grey sofa.',
+  },
+  {
+    id: 7,
+    tag: 'Brass-Handled Glassware',
+    eyebrow: 'Hospitality & Bar',
+    title: 'Anchor Tea Glass',
+    description:
+      'Double-wall glass tea cup cradled in a hand-finished brass sleeve, engraved with a foundry anchor mark and saucer.',
+    image: '/products/product_7.webp',
+    alt: 'Glass tea cup in a brass anchor-engraved holder on a wooden desk with a compass and scrolls.',
+  },
+  {
+    id: 8,
+    tag: 'Cast Brass & Walnut',
+    eyebrow: "Objets D'Art",
+    title: 'Armillary Sphere Bookend',
+    description:
+      'Miniature brass armillary sphere paired with a solid walnut bookend block, cast and finished for the private library.',
+    image: '/products/product_8.webp',
+    alt: 'Small brass armillary sphere beside a wooden bookend on a shelf of leather-bound books.',
+  },
+  {
+    id: 9,
+    tag: 'Precision Cast Brass',
+    eyebrow: 'Maritime Heritage',
+    title: 'Pocket Sundial Compass',
+    description:
+      "Folding brass sundial and compass instrument with engraved dial work, hinged gnomon, and a hand-lettered maker's mark.",
+    image: '/products/product_9.webp',
+    alt: 'Brass folding sundial and compass instrument engraved with dial markings on a dark surface.',
+  },
+  {
+    id: 10,
+    tag: 'Cast Brass & Turned Wood',
+    eyebrow: 'Ceremonial & Retail',
+    title: 'Foundry Hand Bell',
+    description:
+      'Deep-cast brass bell with a lathe-turned hardwood grip, tuned for a clear ring and polished to a mirror finish.',
+    image: '/products/product_10.webp',
+    alt: 'Brass hand bell with a turned wooden handle standing on a dark wood table.',
+  },
+  {
+    id: 11,
+    tag: 'Brass-Bound Hardwood',
+    eyebrow: 'Maritime Heritage',
+    title: 'Anchor Deck Box',
+    description:
+      'Brass-cornered hardwood catch-all with an inlaid anchor emblem and a mirror-polished brass bowl insert.',
+    image: '/products/product_11.webp',
+    alt: 'Wooden and brass anchor-emblem deck box on a yacht table with rope and a compass.',
+  },
+  {
+    id: 12,
+    tag: 'Cast Brass',
+    eyebrow: 'Maritime Heritage',
+    title: "Ship's Bell & Bracket",
+    description:
+      "Full-size cast brass ship's bell on a wrought wall bracket, finished with a hand-knotted rope lanyard.",
+    image: '/products/product_12.webp',
+    alt: 'Polished brass ships bell mounted on a wall bracket with a rope tassel, beside a brass globe.',
   },
 ]
 
@@ -193,16 +253,14 @@ export const PILLARS = [
   {
     icon: 'verified',
     title: 'Audited Compliance',
-    description: 'Sedex SMETA 4-Pillar labor compliance, ISO 9001:2015, and EPCH premier exporter accreditation.',
+    description: 'Vriksh Certified sustainable sourcing, ISO 9001:2015, and EPCH premier exporter accreditation.',
   },
 ]
 
 export const RFQ_CATEGORIES = [
   { value: 'nautical', label: 'Nautical & Maritime Hardware' },
-  { value: 'lighting', label: 'Architectural Lighting & Sconces' },
   { value: 'kitchen', label: 'Artisanal Copper & Barware' },
   { value: 'urns', label: 'Memorial Urns & Keepsakes' },
-  { value: 'furniture', label: 'Cast Metal Furniture & Plinths' },
   { value: 'decorative', label: 'Sculptural Decorative Accessories' },
   { value: 'custom', label: 'Bespoke Custom OEM / CAD Project' },
 ]
@@ -219,11 +277,9 @@ export const FOOTER_NAV = [
 
 export const FOOTER_PRODUCTS = [
   'Nautical Hardware',
-  'Architectural Lighting',
   'Artisanal Tabletop',
   'Memorial Urns',
-  'Cast Metal Accent Furniture',
   'Decorative Accessories',
 ]
 
-export const CERTIFICATIONS = ['Sedex SMETA Audited', 'EPCH Recognized', 'ISO 9001:2015']
+export const CERTIFICATIONS = ['Vriksh Certified', 'EPCH Recognized', 'ISO 9001:2015']

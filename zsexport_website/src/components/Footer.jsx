@@ -76,8 +76,8 @@ export default function Footer() {
               <p className="text-on-surface font-medium">Works &amp; Foundry Facility:</p>
               <p>{BRAND.address}</p>
               <p className="mt-space-2xs">
-                <span className="text-on-surface font-medium">Ports of Dispatch:</span> Nhava Sheva (JNPT) &amp;
-                Mundra
+                <span className="text-on-surface font-medium">Ports of Dispatch:</span> Nhava Sheva (JNPT), Mundra
+                &amp; ICD Moradabad
               </p>
               <p>
                 <span className="text-on-surface font-medium">Direct Export Desk:</span>{' '}

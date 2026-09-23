@@ -113,7 +113,7 @@ export default function Hero() {
                 Certification
               </span>
               <p className="font-body-sm text-body-sm text-on-surface-variant">
-                Sedex SMETA &amp; ISO 9001:2015 Continuous Quality Assured
+                Vriksh Certified &amp; ISO 9001:2015 Continuous Quality Assured
               </p>
             </motion.div>
           </Reveal>
