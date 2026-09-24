@@ -11,7 +11,7 @@ export const BRAND = {
 export const NAV_LINKS = [
   { label: 'Home', path: 'home', href: '#top' },
   { label: 'About', path: 'about', href: '#about' },
-  { label: 'Products', path: 'products', href: '#categories' },
+  { label: 'Products', path: 'products', href: '#/products' },
   { label: 'Manufacturing', path: 'manufacturing', href: '#manufacturing' },
   { label: 'Quality', path: 'quality', href: '#quality' },
   { label: 'Customization', path: 'customization', href: '#customization' },
@@ -30,7 +30,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 1,
     tag: 'Cast Brass & Hand-Blown Glass',
-    eyebrow: 'Architectural Lighting',
     title: 'Wall-Mount Ship Lantern',
     description:
       'Cross-braced brass hurricane lantern with a wrought hanger hook, glazed on four faces for a steady, weatherproof flame.',
@@ -40,7 +39,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 2,
     tag: 'Lost-Wax Cire Perdue',
-    eyebrow: "Objets D'Art",
     title: 'Sculptural Dolphin Figure',
     description:
       'Verdigris-patinated bronze dolphin cast mid-leap, mounted on a blackened steel plinth for console and shelf display.',
@@ -50,7 +48,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 3,
     tag: 'Cast Pewter & Glass',
-    eyebrow: 'Tabletop Accents',
     title: 'Starfish Hurricane Holder',
     description:
       'Hand-cast pewter starfish base cradling a blown-glass hurricane, styled for mantels and formal tablescapes.',
@@ -60,7 +57,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 4,
     tag: 'Brass & Mother-of-Pearl',
-    eyebrow: 'Maritime Heritage',
     title: 'Opera Field Glasses',
     description:
       'Aged-brass binoculars set in genuine mother-of-pearl barrels, finished with a braided wrist strap and precision optics.',
@@ -70,7 +66,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 5,
     tag: 'Cast Brass & Glass',
-    eyebrow: 'Desk & Study',
     title: 'Brass Sand Timer',
     description:
       'Turned brass hourglass with fluted end caps and blackened sand, a weighted keepsake for the desk or mantel.',
@@ -80,7 +75,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 6,
     tag: 'Brass-Capped Hardwood',
-    eyebrow: 'Furniture & Interiors',
     title: 'Accent Side Table',
     description:
       'Walnut-topped side table on a powder-coated steel frame, engineered for compact living and lounge settings.',
@@ -90,7 +84,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 7,
     tag: 'Brass-Handled Glassware',
-    eyebrow: 'Hospitality & Bar',
     title: 'Anchor Tea Glass',
     description:
       'Double-wall glass tea cup cradled in a hand-finished brass sleeve, engraved with a foundry anchor mark and saucer.',
@@ -100,7 +93,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 8,
     tag: 'Cast Brass & Walnut',
-    eyebrow: "Objets D'Art",
     title: 'Armillary Sphere Bookend',
     description:
       'Miniature brass armillary sphere paired with a solid walnut bookend block, cast and finished for the private library.',
@@ -110,7 +102,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 9,
     tag: 'Precision Cast Brass',
-    eyebrow: 'Maritime Heritage',
     title: 'Pocket Sundial Compass',
     description:
       "Folding brass sundial and compass instrument with engraved dial work, hinged gnomon, and a hand-lettered maker's mark.",
@@ -120,7 +111,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 10,
     tag: 'Cast Brass & Turned Wood',
-    eyebrow: 'Ceremonial & Retail',
     title: 'Foundry Hand Bell',
     description:
       'Deep-cast brass bell with a lathe-turned hardwood grip, tuned for a clear ring and polished to a mirror finish.',
@@ -130,7 +120,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 11,
     tag: 'Brass-Bound Hardwood',
-    eyebrow: 'Maritime Heritage',
     title: 'Anchor Deck Box',
     description:
       'Brass-cornered hardwood catch-all with an inlaid anchor emblem and a mirror-polished brass bowl insert.',
@@ -140,7 +129,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 12,
     tag: 'Cast Brass',
-    eyebrow: 'Maritime Heritage',
     title: "Ship's Bell & Bracket",
     description:
       "Full-size cast brass ship's bell on a wrought wall bracket, finished with a hand-knotted rope lanyard.",
@@ -150,7 +138,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 13,
     tag: 'Cast Nickel & Glass',
-    eyebrow: 'Furniture & Interiors',
     title: 'Octopus Coffee Table',
     description:
       'Sculptural cast-metal octopus base with coiling, textured tentacles supporting a bevelled round glass top, a statement centerpiece for coastal lounges.',
@@ -160,7 +147,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 14,
     tag: 'Hand-Painted Mango Wood',
-    eyebrow: 'Tabletop Accents',
     title: 'Seahorse Bowl',
     description:
       'Deep indigo mango-wood bowl hand-painted with a fine-lined seahorse motif and finished with a natural raw-wood rim.',
@@ -170,7 +156,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 15,
     tag: 'Cast Brass',
-    eyebrow: 'Tabletop Accents',
     title: 'Chamberstick Candle Holder',
     description:
       "Mirror-polished brass chamberstick with a wide drip-catch saucer and a looped finger ring, cast for the writing desk or bedside table.",
@@ -180,7 +165,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 16,
     tag: 'Laser-Engraved Acacia Wood',
-    eyebrow: 'Kitchen & Tableware',
     title: 'Octopus Serving Board',
     description:
       'Solid acacia serving board with a fine-line octopus etched across banded grain, equally suited to cheese service or countertop display.',
@@ -190,7 +174,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 17,
     tag: 'Brass & Turned Hardwood',
-    eyebrow: 'Ceremonial & Retail',
     title: 'Bell-Cap Candle Snuffer',
     description:
       'Long-handled brass candle snuffer with a domed bell cap and a leather-wrapped hardwood shaft, finished with a twisted-rope pommel ring.',
@@ -200,7 +183,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 18,
     tag: 'Cast Brass',
-    eyebrow: 'Desk & Study',
     title: 'Gimbal Desk Clock',
     description:
       'Ship-instrument-style clock on a swivelling brass gimbal cradle with a 12/24-hour dial, set on an embossed floral pedestal base.',
@@ -210,7 +192,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 19,
     tag: 'Brass & Solid Wood',
-    eyebrow: 'Maritime Heritage',
     title: "Ship's Wheel Wall Clock",
     description:
       "Hand-turned hardwood ship's wheel framing a hinged brass porthole clock face with Roman numerals, wired for wall display.",
@@ -220,7 +201,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 20,
     tag: 'Antique Brass',
-    eyebrow: 'Maritime Heritage',
     title: 'Marco Polo Compass Watch',
     description:
       'Engraved brass pocket compass and clock paired on a curb chain, the hinged cover hand-lettered with a Marco Polo voyager motif.',
@@ -230,7 +210,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 21,
     tag: 'Enamelled Mango Wood',
-    eyebrow: 'Tabletop Accents',
     title: 'Seahorse Enamel Platter',
     description:
       'Carved mango-wood seahorse serving board finished in glossy navy and red enamel pools, ideal for olives, dips, or canapés.',
@@ -240,7 +219,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 22,
     tag: 'Brass-Inlaid Hardwood',
-    eyebrow: 'Hospitality & Bar',
     title: "Ship's Wheel Coaster Set",
     description:
       "Six turned hardwood coasters nested inside a brass-spoked ship's wheel caddy, a functional bar set with a maritime silhouette.",
@@ -250,7 +228,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 23,
     tag: 'Cast Brass',
-    eyebrow: 'Architectural Hardware',
     title: 'Tall Ship Key Holder',
     description:
       'Relief-cast brass wall plaque of a full-rigged tall ship fitted with three hooks, a functional entryway piece for keys and keepsakes.',
@@ -260,7 +237,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 24,
     tag: 'Cast Nickel-Brass',
-    eyebrow: 'Kitchen & Tableware',
     title: 'Anchor Trivet',
     description:
       'Pierced cast-metal trivet centered on a rope-wrapped anchor motif, sized to protect tabletops from hot cookware and serveware.',
@@ -270,7 +246,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 25,
     tag: 'Polished Brass',
-    eyebrow: 'Hospitality & Bar',
     title: 'Brass Serving Tong Set',
     description:
       'Two nested sizes of mirror-polished brass serving tongs, hinge-pivoted for a firm grip, presented in fitted suede sleeves.',
@@ -280,7 +255,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 26,
     tag: 'Cast Brass',
-    eyebrow: 'Architectural Hardware',
     title: 'Whale Door Knocker',
     description:
       'Solid brass sperm-whale door knocker with a swinging ring striker, sand-cast with hand-finished detailing for exterior doors.',
@@ -290,7 +264,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 27,
     tag: 'Cast Brass',
-    eyebrow: 'Architectural Hardware',
     title: 'Propeller Door Stop',
     description:
       'Weighted cast-brass door stop cast in an abstract three-blade propeller form, finished with a burnished antique patina.',
@@ -300,7 +273,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 28,
     tag: 'Cast Pewter',
-    eyebrow: 'Hospitality & Bar',
     title: 'Crab Claw Flatware Set',
     description:
       'Five-piece place setting cast with textured crab-claw handles, silver-finished and detailed with realistic shell etching.',
@@ -310,7 +282,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 29,
     tag: 'Hand-Painted Wood & Metal',
-    eyebrow: 'Desk & Study',
     title: 'Desk World Globe',
     description:
       'Hand-painted tabletop globe with fine political detailing, seated on a hand-turned hardwood plinth base for the study or office.',
@@ -320,7 +291,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 30,
     tag: 'Cast Brass',
-    eyebrow: 'Maritime Heritage',
     title: 'Anchor Keychain Fob',
     description:
       'Solid cast-brass anchor fob on a curb chain and locking carabiner clasp, a compact foundry keepsake for retail and gifting.',
@@ -330,7 +300,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 31,
     tag: 'Brass-Inlaid Hardwood',
-    eyebrow: 'Games & Leisure',
     title: 'Oversized Dice Set',
     description:
       'Weighted hardwood dice with brass-pip inlay, a large hinged display die paired with two standard-size playing dice.',
@@ -340,7 +309,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 32,
     tag: 'Cast Pewter & Glass',
-    eyebrow: 'Desk & Study',
     title: "Sailor's Hand Magnifier",
     description:
       "Optical-glass magnifying lens gripped by a cast pewter sailor's-hand handle, textured with a knit sweater cuff detail.",
@@ -350,7 +318,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 33,
     tag: 'Brass & Turned Wood',
-    eyebrow: 'Desk & Study',
     title: 'Gimbal Magnifier Stand',
     description:
       'Brass magnifying glass with a turned hardwood grip, mounted on an adjustable brass gimbal and hardwood desk stand.',
@@ -360,7 +327,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 34,
     tag: 'Brass & Walnut',
-    eyebrow: 'Desk & Study',
     title: "Ship's Wheel Letter Opener Set",
     description:
       "Stainless letter opener finished with a cast ship's-wheel handle, presented in a walnut keepsake box inlaid with a brass anchor.",
@@ -370,7 +336,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 35,
     tag: 'Cast Brass',
-    eyebrow: 'Desk & Study',
     title: "Ship's Wheel Pen Stand",
     description:
       "Torpedo-style brass pen seated in a miniature cast ship's-wheel stand, a desk accent for the captain's writing table.",
@@ -380,7 +345,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 36,
     tag: 'Antique Brass',
-    eyebrow: 'Hospitality & Bar',
     title: "Ship's Wheel Bottle Opener",
     description:
       "Hand-cast bottle opener finished in oxidised antique brass, its head detailed as a miniature ship's wheel for the bar cart.",
@@ -390,7 +354,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 37,
     tag: 'Aged Brass & Glass',
-    eyebrow: "Objets D'Art",
     title: 'Porthole Wall Mirror',
     description:
       'Riveted brass porthole frame with working hinge and latch dogs, fitted with a bevelled mirror for coastal entryways and baths.',
@@ -400,7 +363,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 38,
     tag: 'Precision Cast Brass',
-    eyebrow: 'Maritime Heritage',
     title: "Navigator's Sextant",
     description:
       "Fully functional brass sextant with graduated arc scale, index mirror, and telescope sight, engraved in the maker's tradition.",
@@ -410,7 +372,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 39,
     tag: 'Brass & Solid Wood',
-    eyebrow: "Objets D'Art",
     title: 'Porthole Ship Frame',
     description:
       'Hinged brass porthole framing a fine-line tall-ship print, mounted on a solid wood block for shelf or desktop display.',
@@ -420,7 +381,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 40,
     tag: 'Cast Brass & Hardwood',
-    eyebrow: "Objets D'Art",
     title: 'Grand Armillary Sphere',
     description:
       "Full-scale cast brass armillary sphere with engraved zodiac and latitude rings, balanced on a turned hardwood pedestal.",
@@ -430,7 +390,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 41,
     tag: 'Cast Brass',
-    eyebrow: 'Maritime Heritage',
     title: 'Engine Order Telegraph',
     description:
       'Full-size reproduction bridge telegraph with dual brass handles and a lettered command dial, cast in the 1866 Liverpool pattern.',
@@ -440,7 +399,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 42,
     tag: 'Cast Aluminium',
-    eyebrow: 'Tabletop Accents',
     title: 'Fish-Form Serving Platter',
     description:
       'Deep-relief cast platter detailed with realistic fish scales and fins, sized for shellfish, crudo, and coastal-table service.',
@@ -450,7 +408,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 43,
     tag: 'Nickel-Plated Brass',
-    eyebrow: 'Desk & Study',
     title: 'Anchor Hilt Letter Opener',
     description:
       'Dagger-profile letter opener with a cross-guard hilt and a hand-wrapped cord grip, capped with a curved anchor-fluke pommel.',
@@ -460,7 +417,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 44,
     tag: 'Brass-Capped Hardwood',
-    eyebrow: 'Ceremonial & Retail',
     title: "Captain's Walking Cane",
     description:
       'Slender hardwood walking stick banded in brass with a rounded knob handle, finished with a protective rubber ferrule tip.',
@@ -470,7 +426,6 @@ export const PRODUCT_GALLERY = [
   {
     id: 45,
     tag: 'Rope-Trimmed Hardwood & Brass',
-    eyebrow: "Objets D'Art",
     title: "Rope-Bound Ship's Wheel",
     description:
       "Hand-turned hardwood ship's wheel bound in natural rope trim around a polished brass hub medallion, for wall or console display.",
@@ -587,6 +542,52 @@ export const PILLARS = [
   },
 ]
 
+const slugify = (name) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+
+// Catalogue structure. Categories with `subcategories` group their products by sub-category;
+// the rest list their products directly. Products are referenced by PRODUCT_GALLERY id.
+const CATEGORY_TREE = [
+  {
+    name: 'Nautical',
+    subcategories: [
+      { name: 'Ship Fittings & Wall Decor', ids: [1, 12, 19, 37, 39, 45, 23, 26, 27] },
+      { name: 'Navigation Instruments', ids: [4, 9, 20, 38, 41, 40, 8] },
+      { name: 'Desk & Study', ids: [5, 18, 29, 32, 33, 34, 35, 43] },
+      { name: 'Bar & Dining', ids: [7, 22, 25, 28, 36] },
+      { name: 'Gifts & Keepsakes', ids: [10, 11, 17, 30, 31, 44] },
+    ],
+  },
+  { name: 'Furniture', ids: [6, 13] },
+  { name: 'Urns', ids: [2, 3, 14, 15, 16, 21, 24, 42] },
+]
+
+const productById = new Map(PRODUCT_GALLERY.map((product) => [product.id, product]))
+
+// Each category: { name, slug, products, subcategories: [{ name, slug, products }] } (subcategories may be empty).
+export const PRODUCT_CATEGORIES = CATEGORY_TREE.map((category) => {
+  const subcategories = (category.subcategories ?? []).map((sub) => ({
+    name: sub.name,
+    slug: slugify(sub.name),
+    products: sub.ids.map((id) => productById.get(id)),
+  }))
+  const products = subcategories.length ? subcategories.flatMap((sub) => sub.products) : category.ids.map((id) => productById.get(id))
+  return {
+    name: category.name,
+    slug: slugify(category.name),
+    subcategories,
+    products: products.map((product) => ({ ...product, category: category.name })),
+  }
+})
+
+export const FEATURED_PRODUCTS = PRODUCT_CATEGORIES.slice(0, 3).map((category) => category.products[0])
+
+export const categoryPath = (categorySlug, subSlug) =>
+  `#/products/${categorySlug}${subSlug ? `/${subSlug}` : ''}`
+
 export const RFQ_CATEGORIES = [
   { value: 'nautical', label: 'Nautical & Maritime Hardware' },
   { value: 'kitchen', label: 'Artisanal Copper & Barware' },
@@ -605,11 +606,5 @@ export const FOOTER_NAV = [
   { label: 'Trade Terms & Incoterms', href: '#trade-inquiry' },
 ]
 
-export const FOOTER_PRODUCTS = [
-  'Nautical Hardware',
-  'Artisanal Tabletop',
-  'Memorial Urns',
-  'Decorative Accessories',
-]
 
 export const CERTIFICATIONS = ['Vriksh Certified', 'EPCH Recognized', 'ISO 9001:2015']

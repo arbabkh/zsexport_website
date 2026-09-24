@@ -1,4 +1,4 @@
-import { BRAND, CERTIFICATIONS, FOOTER_NAV, FOOTER_PRODUCTS } from '../data/siteData'
+import { BRAND, CERTIFICATIONS, FOOTER_NAV, PRODUCT_CATEGORIES, categoryPath } from '../data/siteData'
 import Reveal from './Reveal'
 
 export default function Footer() {
@@ -55,13 +55,13 @@ export default function Footer() {
               Product Categories
             </h3>
             <ul className="flex flex-col gap-space-sm">
-              {FOOTER_PRODUCTS.map((product) => (
-                <li key={product} className="leading-none">
+              {PRODUCT_CATEGORIES.slice(0, 6).map((category) => (
+                <li key={category.slug} className="leading-none">
                   <a
                     className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors inline-block py-1"
-                    href="#categories"
+                    href={categoryPath(category.slug)}
                   >
-                    {product}
+                    {category.name}
                   </a>
                 </li>
               ))}

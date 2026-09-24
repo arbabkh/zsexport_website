@@ -2,10 +2,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { BRAND, NAV_LINKS } from '../data/siteData'
 
-export default function Header() {
+export default function Header({ route = 'home' }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activePath, setActivePath] = useState('home')
+  const [sectionPath, setSectionPath] = useState('home')
+  const activePath = route === 'products' ? 'products' : sectionPath
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -15,7 +16,10 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((link) => document.querySelector(link.href)).filter(Boolean)
+    if (route === 'products') return
+    const sections = NAV_LINKS.filter((link) => !link.href.startsWith('#/'))
+      .map((link) => document.querySelector(link.href))
+      .filter(Boolean)
     if (!sections.length) return
 
     const observer = new IntersectionObserver(
@@ -23,7 +27,7 @@ export default function Header() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const match = NAV_LINKS.find((link) => `#${entry.target.id}` === link.href || (link.href === '#top' && entry.target.id === 'top'))
-            if (match) setActivePath(match.path)
+            if (match) setSectionPath(match.path)
           }
         })
       },
@@ -32,7 +36,7 @@ export default function Header() {
 
     sections.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
-  }, [])
+  }, [route])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
