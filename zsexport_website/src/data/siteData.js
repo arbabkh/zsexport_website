@@ -120,11 +120,11 @@ export const PRODUCT_GALLERY = [
   {
     id: 11,
     tag: 'Brass-Bound Hardwood',
-    title: 'Anchor Deck Box',
+    title: 'Anchor Ashtray',
     description:
       'Brass-cornered hardwood catch-all with an inlaid anchor emblem and a mirror-polished brass bowl insert.',
     image: '/products/product_11.webp',
-    alt: 'Wooden and brass anchor-emblem deck box on a yacht table with rope and a compass.',
+    alt: 'Wooden and brass anchor-emblem ashtray on a yacht table with rope and a compass.',
   },
   {
     id: 12,
@@ -562,6 +562,7 @@ const CATEGORY_TREE = [
     // ],
 
     subcategories: [
+      { name: 'Ashtray', ids: [11] },
       { name: 'Bowl', ids: [14] },
       { name: 'Cake Stand', ids: [13] },
       { name: 'Candle Snuffer', ids: [17] },
@@ -595,8 +596,8 @@ const CATEGORY_TREE = [
       { name: 'Walking Stick', ids: [44] },
     ],
   },
-  { name: 'Furniture', ids: [6, 13] },
-  { name: 'Urns', ids: [2, 3, 14, 15, 16, 21, 24, 42] },
+  { name: 'Furniture', ids: [6] },
+  { name: 'Urns', ids: [2, 3] },
 ]
 
 const productById = new Map(PRODUCT_GALLERY.map((product) => [product.id, product]))
