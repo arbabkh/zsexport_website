@@ -156,16 +156,16 @@ export const PRODUCT_GALLERY = [
   {
     id: 15,
     tag: 'Cast Brass',
-    title: 'Chamberstick Candle Holder',
+    title: 'Chamberstick Candle Stand',
     description:
       "Mirror-polished brass chamberstick with a wide drip-catch saucer and a looped finger ring, cast for the writing desk or bedside table.",
     image: '/products/product_15.webp',
-    alt: "Polished brass chamberstick candle holder with a finger ring on a ship captain's desk.",
+    alt: "Polished brass chamberstick candle stand with a finger ring on a ship captain's desk.",
   },
   {
     id: 16,
     tag: 'Laser-Engraved Acacia Wood',
-    title: 'Octopus Serving Board',
+    title: 'Octopus Cutting Board',
     description:
       'Solid acacia serving board with a fine-line octopus etched across banded grain, equally suited to cheese service or countertop display.',
     image: '/products/product_16.webp',
@@ -210,7 +210,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 21,
     tag: 'Enamelled Mango Wood',
-    title: 'Seahorse Enamel Platter',
+    title: 'Seahorse Tray',
     description:
       'Carved mango-wood seahorse serving board finished in glossy navy and red enamel pools, ideal for olives, dips, or canapés.',
     image: '/products/product_21.webp',
@@ -228,11 +228,11 @@ export const PRODUCT_GALLERY = [
   {
     id: 23,
     tag: 'Cast Brass',
-    title: 'Tall Ship Key Holder',
+    title: 'Ship Key Holder',
     description:
       'Relief-cast brass wall plaque of a full-rigged tall ship fitted with three hooks, a functional entryway piece for keys and keepsakes.',
     image: '/products/product_23.webp',
-    alt: 'Brass tall ship key holder mounted on a wall with keys and an anchor fob hanging from its hooks.',
+    alt: 'Brass ship key holder mounted on a wall with keys and an anchor fob hanging from its hooks.',
   },
   {
     id: 24,
@@ -264,7 +264,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 27,
     tag: 'Cast Brass',
-    title: 'Propeller Door Stop',
+    title: 'Propeller Door Stopper',
     description:
       'Weighted cast-brass door stop cast in an abstract three-blade propeller form, finished with a burnished antique patina.',
     image: '/products/product_27.webp',
@@ -273,11 +273,11 @@ export const PRODUCT_GALLERY = [
   {
     id: 28,
     tag: 'Cast Pewter',
-    title: 'Crab Claw Flatware Set',
+    title: 'Crab Claw Cutlery Set',
     description:
       'Five-piece place setting cast with textured crab-claw handles, silver-finished and detailed with realistic shell etching.',
     image: '/products/product_28.webp',
-    alt: 'Silver crab claw handled flatware set laid on a navy blue napkin.',
+    alt: 'Silver crab claw handled cutlery set laid on a navy blue napkin.',
   },
   {
     id: 29,
@@ -291,9 +291,9 @@ export const PRODUCT_GALLERY = [
   {
     id: 30,
     tag: 'Cast Brass',
-    title: 'Anchor Keychain Fob',
+    title: 'Anchor Keychain',
     description:
-      'Solid cast-brass anchor fob on a curb chain and locking carabiner clasp, a compact foundry keepsake for retail and gifting.',
+      'Solid cast-brass anchor on a curb chain and locking carabiner clasp, a compact foundry keepsake for retail and gifting.',
     image: '/products/product_30.webp',
     alt: 'Brass anchor keychain hanging from a wooden trunk beside a coiled rope.',
   },
@@ -318,11 +318,11 @@ export const PRODUCT_GALLERY = [
   {
     id: 33,
     tag: 'Brass & Turned Wood',
-    title: 'Gimbal Magnifier Stand',
+    title: 'Gimbal Magnifier',
     description:
       'Brass magnifying glass with a turned hardwood grip, mounted on an adjustable brass gimbal and hardwood desk stand.',
     image: '/products/product_33.webp',
-    alt: 'Brass magnifying glass on an adjustable stand with a wooden base on a study desk.',
+    alt: 'Brass magnifying glass on an adjustable with a wooden base on a study desk.',
   },
   {
     id: 34,
@@ -399,7 +399,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 42,
     tag: 'Cast Aluminium',
-    title: 'Fish-Form Serving Platter',
+    title: 'Fish-Form Serving Tray',
     description:
       'Deep-relief cast platter detailed with realistic fish scales and fins, sized for shellfish, crudo, and coastal-table service.',
     image: '/products/product_42.webp',
@@ -408,11 +408,11 @@ export const PRODUCT_GALLERY = [
   {
     id: 43,
     tag: 'Nickel-Plated Brass',
-    title: 'Anchor Hilt Letter Opener',
+    title: 'Shoe Horn',
     description:
-      'Dagger-profile letter opener with a cross-guard hilt and a hand-wrapped cord grip, capped with a curved anchor-fluke pommel.',
+      'Dagger-profile letter Shoe Horn with a cross-guard hilt and a hand-wrapped cord grip, capped with a curved anchor-fluke pommel.',
     image: '/products/product_43.webp',
-    alt: 'Silver dagger-style letter opener with a black wrapped handle and anchor pommel on a wooden desk.',
+    alt: 'Silver dagger-style letter Shoe Horn with a black wrapped handle and anchor pommel on a wooden desk.',
   },
   {
     id: 44,
@@ -553,12 +553,46 @@ const slugify = (name) =>
 const CATEGORY_TREE = [
   {
     name: 'Nautical',
+    // subcategories: [
+    //   { name: 'Ship Fittings & Wall Decor', ids: [1, 12, 19, 37, 39, 45, 23, 26, 27] },
+    //   { name: 'Navigation Instruments', ids: [4, 9, 20, 38, 41, 40, 8] },
+    //   { name: 'Desk & Study', ids: [5, 18, 29, 32, 33, 34, 35, 43] },
+    //   { name: 'Bar & Dining', ids: [7, 22, 25, 28, 36] },
+    //   { name: 'Gifts & Keepsakes', ids: [10, 11, 17, 30, 31, 44] },
+    // ],
+
     subcategories: [
-      { name: 'Ship Fittings & Wall Decor', ids: [1, 12, 19, 37, 39, 45, 23, 26, 27] },
-      { name: 'Navigation Instruments', ids: [4, 9, 20, 38, 41, 40, 8] },
-      { name: 'Desk & Study', ids: [5, 18, 29, 32, 33, 34, 35, 43] },
-      { name: 'Bar & Dining', ids: [7, 22, 25, 28, 36] },
-      { name: 'Gifts & Keepsakes', ids: [10, 11, 17, 30, 31, 44] },
+      { name: 'Bowl', ids: [14] },
+      { name: 'Cake Stand', ids: [13] },
+      { name: 'Candle Snuffer', ids: [17] },
+      { name: 'Candle Stand', ids: [15] },
+      { name: 'Cutting Board', ids: [16] },
+      { name: 'Tray', ids: [21] },
+      { name: 'Desk Clock', ids: [18] },
+      { name: 'Wall Clock', ids: [19] },
+      { name: 'Pocket Watch', ids: [20] },
+      { name: 'Trivet', ids: [24] },
+      { name: 'Coaster', ids: [22] },
+      { name: 'Key Hanger', ids: [23] },
+      { name: 'Cutlery', ids: [28] },
+      { name: 'Divider', ids: [25] },
+      { name: 'Door Knocker', ids: [26] },
+      { name: 'Door Stopper', ids: [27] },
+      { name: 'Games', ids: [31] },
+      { name: 'Globe', ids: [29] },
+      { name: 'keyring', ids: [30] },
+      { name: 'Magnifying Glass', ids: [33, 32] },
+      { name: 'Bottle Opener', ids: [36, 34] },
+      { name: 'Pen Holder', ids: [35] },
+      { name: 'Photo Frame', ids: [39] },
+      { name: 'Porthole Mirror', ids: [37] },
+      { name: 'Sextent', ids: [38] },
+      { name: 'Shoe Horn', ids: [43] },
+      { name: 'Armillary Sphere', ids: [40] },
+      { name: 'Telegraph', ids: [41] },
+      { name: 'Serving Tray', ids: [42] },
+      { name: 'Wheel', ids: [45] },
+      { name: 'Walking Stick', ids: [44] },
     ],
   },
   { name: 'Furniture', ids: [6, 13] },

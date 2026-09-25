@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { PRODUCT_CATEGORIES, categoryPath } from '../data/siteData'
 import ProductCard from './ProductCard'
 
@@ -12,6 +13,11 @@ export default function ProductsPage({ slug, sub }) {
   const category = PRODUCT_CATEGORIES.find((item) => item.slug === slug) ?? PRODUCT_CATEGORIES[0]
   const subcategory = category.subcategories.find((item) => item.slug === sub)
   const products = subcategory ? subcategory.products : category.products
+  const [collapsedSlug, setCollapsedSlug] = useState(null)
+
+  useEffect(() => {
+    setCollapsedSlug(null)
+  }, [category.slug])
 
   return (
     <section className="w-full bg-surface-container-low min-h-[80vh] py-space-3xl">
@@ -28,20 +34,28 @@ export default function ProductsPage({ slug, sub }) {
             <h2 className="font-label-caps text-label-caps uppercase tracking-[0.2em] text-on-surface-variant mb-space-md">
               Categories
             </h2>
-            <ul className="flex flex-col gap-space-xs lg:sticky lg:top-28">
+            <ul className="flex flex-col gap-space-xs lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-space-xs">
               {PRODUCT_CATEGORIES.map((item) => {
                 const isCurrent = item.slug === category.slug
+                const isExpanded = isCurrent && collapsedSlug !== item.slug
                 return (
                   <li key={item.slug}>
                     <a
                       href={categoryPath(item.slug)}
+                      onClick={(event) => {
+                        if (isCurrent && !subcategory) {
+                          event.preventDefault()
+                          setCollapsedSlug((prev) => (prev === item.slug ? null : item.slug))
+                        }
+                      }}
                       aria-current={isCurrent && !subcategory ? 'page' : undefined}
-                      className={linkClass(isCurrent && !subcategory)}
+                      aria-expanded={isCurrent ? isExpanded : undefined}
+                      className={`${linkClass(isCurrent && !subcategory)} lg:sticky lg:top-0 lg:z-10 bg-surface-container-low`}
                     >
                       {item.name}
                       <span className="font-label-spec text-label-spec text-on-surface-variant">{item.products.length}</span>
                     </a>
-                    {isCurrent && item.subcategories.length > 0 && (
+                    {isExpanded && item.subcategories.length > 0 && (
                       <ul className="mt-space-xs ml-space-md flex flex-col gap-space-xs">
                         {item.subcategories.map((child) => {
                           const isActive = child.slug === subcategory?.slug

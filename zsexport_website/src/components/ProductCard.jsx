@@ -5,7 +5,7 @@ export default function ProductCard({ product, href }) {
       {...(href ? { href } : {})}
       className="group block h-full bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
     >
-      <div className="aspect-[4/3] overflow-hidden bg-surface-container">
+      <div className="aspect-[3/3] overflow-hidden bg-surface-container">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           alt={product.alt}
