@@ -19,7 +19,7 @@ export default function GlobalExport() {
                 Seamless Dispatch from Foundry to Harbor
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant mb-space-xl leading-relaxed">
-                With over 38 years handling cross-border maritime shipping, ZS Export operates a frictionless export
+                With over 15 years handling cross-border maritime shipping, ZS Export operates a frictionless export
                 conduit. Our container loading teams optimize Full Container Loads (20ft/40ft FCL) and Less than
                 Container Loads (LCL) directly bonded to India&rsquo;s leading deep-water gateways.
               </p>

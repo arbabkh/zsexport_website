@@ -20,7 +20,7 @@ export const NAV_LINKS = [
 ]
 
 export const HERO_STATS = [
-  { value: '38+', label: 'Years Foundry Heritage' },
+  { value: '15+', label: 'Years Foundry Heritage' },
   { value: '100%', label: 'In-House Metalworks' },
   { value: '48', label: 'Global Export Ports' },
   { value: '500+', label: 'Master Guild Artisans' },
@@ -603,7 +603,7 @@ const CATEGORY_TREE = [
 const productById = new Map(PRODUCT_GALLERY.map((product) => [product.id, product]))
 
 // Each category: { name, slug, products, subcategories: [{ name, slug, products }] } (subcategories may be empty).
-export const PRODUCT_CATEGORIES = CATEGORY_TREE.map((category) => {
+const CATEGORIES_IN_TREE_ORDER = CATEGORY_TREE.map((category) => {
   const subcategories = (category.subcategories ?? []).map((sub) => ({
     name: sub.name,
     slug: slugify(sub.name),
@@ -618,7 +618,20 @@ export const PRODUCT_CATEGORIES = CATEGORY_TREE.map((category) => {
   }
 })
 
-export const FEATURED_PRODUCTS = PRODUCT_CATEGORIES.slice(0, 3).map((category) => category.products[0])
+// Featured picks follow the catalogue tree order, before the A–Z sort below.
+export const FEATURED_PRODUCTS = CATEGORIES_IN_TREE_ORDER.slice(0, 3).map((category) => category.products[0])
+
+const byName = (a, b) => a.name.localeCompare(b.name)
+
+// Categories and sub-categories are listed A–Z.
+export const PRODUCT_CATEGORIES = CATEGORIES_IN_TREE_ORDER.map((category) => {
+  const subcategories = [...category.subcategories].sort(byName)
+  return {
+    ...category,
+    subcategories,
+    products: subcategories.length ? subcategories.flatMap((sub) => sub.products.map((product) => ({ ...product, category: category.name }))) : category.products,
+  }
+}).sort(byName)
 
 export const categoryPath = (categorySlug, subSlug) =>
   `#/products/${categorySlug}${subSlug ? `/${subSlug}` : ''}`
