@@ -26,23 +26,16 @@ export default function ProductCard({ product, href }) {
   return (
     <Tag
       {...(href ? { href } : {})}
-      className="group block h-full bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
+      onClick={openViewer}
+      className="group block cursor-zoom-in h-full bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
     >
-      <div className="relative aspect-[3/3] overflow-hidden bg-surface-container">
+      <div className="aspect-[3/3] overflow-hidden bg-surface-container">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           alt={product.alt}
           src={product.image}
           loading="lazy"
         />
-        <button
-          type="button"
-          onClick={openViewer}
-          aria-label={`View larger image of ${product.title}`}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/55 text-white hover:bg-black/75 transition-colors"
-        >
-          <span className="material-symbols-outlined">zoom_in</span>
-        </button>
       </div>
       <div className="p-space-lg">
         <span className="font-label-caps text-label-caps uppercase tracking-widest text-secondary block mb-space-2xs">

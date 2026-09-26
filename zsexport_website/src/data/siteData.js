@@ -648,7 +648,7 @@ const CATEGORY_TREE = [
     ],
   },
   { name: 'Furniture', ids: [2, 3, 6] },
-  { name: 'Urns', ids: [46, 47, 48, 49, 50] },
+  { name: 'Urns', ids: [6] },
   {
     name: 'Decorative',
     subcategories: [{ name: 'Decoration', ids: [42] }],
@@ -674,19 +674,20 @@ const CATEGORIES_IN_TREE_ORDER = CATEGORY_TREE.map((category) => {
 })
 
 // Featured picks follow the catalogue tree order, before the A–Z sort below.
-export const FEATURED_PRODUCTS = CATEGORIES_IN_TREE_ORDER.slice(0, 3).map((category) => category.products[0])
+export const FEATURED_PRODUCTS = CATEGORIES_IN_TREE_ORDER.map((category) => category.products[0])
 
-const byName = (a, b) => a.name.localeCompare(b.name)
+// Largest product count first; ties fall back to A–Z.
+const byCount = (a, b) => b.products.length - a.products.length || a.name.localeCompare(b.name)
 
-// Categories and sub-categories are listed A–Z.
+// Categories and sub-categories are listed by product count, highest first.
 export const PRODUCT_CATEGORIES = CATEGORIES_IN_TREE_ORDER.map((category) => {
-  const subcategories = [...category.subcategories].sort(byName)
+  const subcategories = [...category.subcategories].sort(byCount)
   return {
     ...category,
     subcategories,
     products: subcategories.length ? subcategories.flatMap((sub) => sub.products.map((product) => ({ ...product, category: category.name }))) : category.products,
   }
-}).sort(byName)
+}).sort(byCount)
 
 export const categoryPath = (categorySlug, subSlug) =>
   `#/products/${categorySlug}${subSlug ? `/${subSlug}` : ''}`
