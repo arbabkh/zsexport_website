@@ -66,7 +66,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 5,
     tag: 'Cast Brass & Glass',
-    title: 'Brass Sand Timer',
+    title: 'Brass',
     description:
       'Turned brass hourglass with fluted end caps and blackened sand, a weighted keepsake for the desk or mantel.',
     image: '/products/product_5.webp',
@@ -84,7 +84,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 7,
     tag: 'Brass-Handled Glassware',
-    title: 'Anchor Tea Glass',
+    title: 'Anchor',
     description:
       'Double-wall glass tea cup cradled in a hand-finished brass sleeve, engraved with a foundry anchor mark and saucer.',
     image: '/products/product_7.webp',
@@ -93,7 +93,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 8,
     tag: 'Cast Brass & Walnut',
-    title: 'Armillary Sphere Bookend',
+    title: 'Bookend',
     description:
       'Miniature brass armillary sphere paired with a solid walnut bookend block, cast and finished for the private library.',
     image: '/products/product_8.webp',
@@ -102,7 +102,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 9,
     tag: 'Precision Cast Brass',
-    title: 'Pocket Sundial Compass',
+    title: 'Sundial',
     description:
       "Folding brass sundial and compass instrument with engraved dial work, hinged gnomon, and a hand-lettered maker's mark.",
     image: '/products/product_9.webp',
@@ -111,7 +111,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 10,
     tag: 'Cast Brass & Turned Wood',
-    title: 'Foundry Hand Bell',
+    title: 'Hand',
     description:
       'Deep-cast brass bell with a lathe-turned hardwood grip, tuned for a clear ring and polished to a mirror finish.',
     image: '/products/product_10.webp',
@@ -129,7 +129,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 12,
     tag: 'Cast Brass',
-    title: "Ship's Bell & Bracket",
+    title: "Ship",
     description:
       "Full-size cast brass ship's bell on a wrought wall bracket, finished with a hand-knotted rope lanyard.",
     image: '/products/product_12.webp',
@@ -636,11 +636,15 @@ const CATEGORY_TREE = [
       { name: 'Porthole Mirror', ids: [37] },
       { name: 'Sextent', ids: [38] },
       { name: 'Shoe Horn', ids: [43] },
-      { name: 'Armillary Sphere', ids: [40] },
+      { name: 'Armillary Sphere', ids: [40, 8] },
       { name: 'Telegraph', ids: [41] },
       { name: 'Serving Tray', ids: [42] },
       { name: 'Wheel', ids: [45] },
       { name: 'Walking Stick', ids: [44] },
+      { name: 'Hour Glass', ids: [5] },
+      { name: 'Glass Holder', ids: [7] },
+      { name: 'Compass', ids: [9] },
+      { name: 'Bell', ids: [10, 12] },
     ],
   },
   { name: 'Furniture', ids: [2, 3, 6] },
