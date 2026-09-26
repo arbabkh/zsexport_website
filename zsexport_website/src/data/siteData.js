@@ -57,7 +57,7 @@ export const PRODUCT_GALLERY = [
   {
     id: 4,
     tag: 'Brass & Mother-of-Pearl',
-    title: 'Opera Field Glasses',
+    title: 'Opera',
     description:
       'Aged-brass binoculars set in genuine mother-of-pearl barrels, finished with a braided wrist strap and precision optics.',
     image: '/products/product_4.webp',
@@ -327,11 +327,11 @@ export const PRODUCT_GALLERY = [
   {
     id: 34,
     tag: 'Brass & Walnut',
-    title: "Ship's Wheel Letter Opener Set",
+    title: "Ship's Wheel",
     description:
-      "Stainless letter opener finished with a cast ship's-wheel handle, presented in a walnut keepsake box inlaid with a brass anchor.",
+      "Stainless paper opener finished with a cast ship's-wheel handle, presented in a walnut keepsake box inlaid with a brass anchor.",
     image: '/products/product_34.webp',
-    alt: "Ship's wheel handled letter opener beside a walnut box inlaid with a brass anchor emblem.",
+    alt: "Ship's wheel handled paper opener beside a walnut box inlaid with a brass anchor emblem.",
   },
   {
     id: 35,
@@ -432,6 +432,51 @@ export const PRODUCT_GALLERY = [
     image: '/products/product_45.webp',
     alt: "Wooden ship's wheel with rope trim and a brass center hub leaning against a wall.",
   },
+  {
+    id: 46,
+    tag: 'Enamel & Nickel-Plated Brass',
+    title: 'Pearl White Engraved',
+    description:
+      'Pearl-white enamel urn with a hand-engraved nickel-plated collar and base, finished with a domed, engraved lid.',
+    image: '/products/product_46.webp',
+    alt: 'White enamel urn with silver engraved bands on a wooden table beside old books and a teacup.',
+  },
+  {
+    id: 47,
+    tag: 'Enamel & Gold-Plated Brass',
+    title: 'Emerald Tree of Life',
+    description:
+      'Deep emerald enamel urn with a gold-leaf tree-of-life motif, brushed brass base and a flat gold-rimmed lid.',
+    image: '/products/product_47.webp',
+    alt: 'Green enamel urn with a gold tree design on a table beside a framed photo and a dried rose.',
+  },
+  {
+    id: 48,
+    tag: 'Hand-Enamelled Cloisonne',
+    title: 'Sage Floral Cloisonne',
+    description:
+      'Sage-green cloisonne urn hand-enamelled with cream blossoms and gold wire detail, presented on a black wooden stand.',
+    image: '/products/product_48.webp',
+    alt: 'Sage green cloisonne urn with white floral pattern on a black stand on a round wooden table.',
+  },
+  {
+    id: 49,
+    tag: 'Sculpted Ceramic-Finish Metal',
+    title: 'Parrot Figure',
+    description:
+      'Sculpted parrot-form keepsake urn in a matte ivory finish, with a fitted removable head that opens the vessel.',
+    image: '/products/product_49.webp',
+    alt: 'Ivory parrot-shaped urn against a warm tan background.',
+  },
+  {
+    id: 50,
+    tag: 'Enamel & Gold-Plated Brass',
+    title: 'Cross Heart Keepsake',
+    description:
+      'Compact heart-shaped keepsake urn in midnight-blue enamel with a gold cross, supplied with a gold ring stand.',
+    image: '/products/product_50.webp',
+    alt: 'Blue heart-shaped keepsake urn with a gold cross on a gold stand beside a photo frame and glasses.',
+  },
 ]
 
 export const PROCESS_PHASES = [
@@ -504,7 +549,7 @@ export const CUSTOMIZATION_POINTS = [
   },
 ]
 
-export const FREIGHT_CORRIDORS = ['United States', 'United Kingdom', 'Germany', 'France', 'UAE', 'Japan']
+export const FREIGHT_CORRIDORS = ['United States', 'United Kingdom', 'Germany', 'France', 'UAE', 'Japan', 'Australia', 'China', 'North America', 'South America', 'Spain', 'Poland']
 
 export const SUPPLY_CHAIN_ROUTE = [
   { x: 30, label: 'Foundry', accent: true },
@@ -563,6 +608,7 @@ const CATEGORY_TREE = [
 
     subcategories: [
       { name: 'Ashtray', ids: [11] },
+      { name: 'Binoculars', ids: [4] },
       { name: 'Bowl', ids: [14] },
       { name: 'Cake Stand', ids: [13] },
       { name: 'Candle Snuffer', ids: [17] },
@@ -583,7 +629,8 @@ const CATEGORY_TREE = [
       { name: 'Globe', ids: [29] },
       { name: 'keyring', ids: [30] },
       { name: 'Magnifying Glass', ids: [33, 32] },
-      { name: 'Bottle Opener', ids: [36, 34] },
+      { name: 'Bottle Opener', ids: [36] },
+      { name: 'Paper Opener', ids: [34] },
       { name: 'Pen Holder', ids: [35] },
       { name: 'Photo Frame', ids: [39] },
       { name: 'Porthole Mirror', ids: [37] },
@@ -596,8 +643,12 @@ const CATEGORY_TREE = [
       { name: 'Walking Stick', ids: [44] },
     ],
   },
-  { name: 'Furniture', ids: [6] },
-  { name: 'Urns', ids: [2, 3] },
+  { name: 'Furniture', ids: [2, 3, 6] },
+  { name: 'Urns', ids: [46, 47, 48, 49, 50] },
+  {
+    name: 'Decorative',
+    subcategories: [{ name: 'Decoration', ids: [42] }],
+  },
 ]
 
 const productById = new Map(PRODUCT_GALLERY.map((product) => [product.id, product]))

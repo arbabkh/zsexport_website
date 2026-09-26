@@ -12,7 +12,7 @@ export default function About() {
               <img
                 className="w-full h-full object-cover"
                 alt="Archival atmospheric photography of Moradabad master artisans hand-hammering large brass sheets around anvils using ancestral metal beating techniques in traditional workshops."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzdrAaPMDGyNMDu2wwlvRFfOl7SL6SKYppv_si5KXirgITdDpoeDy8WrosvtKtT9YE4hyf7k_CbejsNnCpKTlQgfzsdsiZXMkVLmWGyLr6el2LYmaF3lzk7BO7RKE83yNd81ShhnqCUCk12vAjRh2Wa10rl6YSm12RMRC43oQZxBSEkgs_htoQN3J4Ihb1D2ijzTsc0HKiXyw1KVf3fXTUG6nQ4D7DqoXdhBkfrVrzgA-OJs_3PlpYVg"
+                src="/left_card_img.webp"
                 loading="lazy"
               />
             </Reveal>
@@ -20,7 +20,7 @@ export default function About() {
               <img
                 className="w-full h-full object-cover"
                 alt="Modern precision induction furnace pouring molten glowing brass into ceramic shell molds in a high-compliance export-certified foundry facility in India."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_L4yiSy13QrVTRgk-D-6ckKpfYPM88bXt8Up_e8PGwGWgvF3ZscVevIAA9HpcTlyFJjeFNsHb_YVc-WjaTaU5HWClr9oMC3F6rrezSXs58wd_G8iKSi_oX7D9rrWMRPHuHqefpMuoGzXahucf06n9p8UXFDdGP88F5qPDfVY100d8dl-re3TLYUhS1ztC2eq3KD7cZXZLSnGOnJs6aM7m2snfu0DhTkcxJAn8wIqkKbTZbEHfPMpk7w"
+                src="/right_card_img.webp"
                 loading="lazy"
               />
             </Reveal>

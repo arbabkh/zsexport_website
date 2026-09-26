@@ -7,14 +7,7 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop pt-space-4xl pb-space-3xl">
         <Reveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl">
           <div className="lg:col-span-4 flex flex-col">
-            <div className="flex items-center gap-space-sm mb-space-md">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
-                <span className="font-title-editorial text-on-primary font-bold text-[15px]">{BRAND.initial}</span>
-              </div>
-              <span className="font-title-editorial text-title-editorial uppercase tracking-[0.16em] text-on-surface font-semibold">
-                {BRAND.name}
-              </span>
-            </div>
+            <img src="/website_logo.webp" alt={BRAND.name} className="h-16 w-auto rounded-md mb-space-md self-start" />
             <p className="font-body-md text-body-md text-on-surface-variant max-w-sm mb-space-lg leading-relaxed">
               Forging artisanal excellence and heavy cast metalwork from Moradabad&rsquo;s historic foundry district
               since 2011. Trusted by luxury hospitality groups, architectural specifiers, and global retail brands

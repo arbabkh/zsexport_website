@@ -57,17 +57,11 @@ export default function Header({ route = 'home' }) {
         }`}
       >
         <a href="#top" className="flex items-center gap-space-md shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
-            <span className="font-title-editorial text-on-primary font-bold text-[15px]">{BRAND.initial}</span>
-          </div>
-          <span className="flex flex-col text-left">
-            <span className="font-title-editorial text-title-editorial uppercase tracking-[0.18em] text-on-surface font-bold leading-none">
-              {BRAND.name}
-            </span>
-            <span className="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-[0.24em] mt-1">
-              {BRAND.tagline}
-            </span>
-          </span>
+          <img
+            src="/website_logo.webp"
+            alt={BRAND.name}
+            className={`w-auto rounded-md transition-all duration-300 ${scrolled ? 'h-11' : 'h-14'}`}
+          />
         </a>
 
         <nav className="hidden xl:flex items-center gap-space-lg">

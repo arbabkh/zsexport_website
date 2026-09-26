@@ -9,10 +9,17 @@ const linkClass = (isActive) =>
       : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60'
   }`
 
+// In a sub-category view, show the sub-category as the card label and drop it from the end of the title (e.g. "Seahorse Bowl" -> "Seahorse").
+const withSubcategoryLabel = (product, subName) => {
+  const suffix = new RegExp(`\\s+${subName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i')
+  const title = product.title.replace(suffix, '').trim()
+  return { ...product, category: subName, title: title || product.title }
+}
+
 export default function ProductsPage({ slug, sub }) {
   const category = PRODUCT_CATEGORIES.find((item) => item.slug === slug) ?? PRODUCT_CATEGORIES[0]
   const subcategory = category.subcategories.find((item) => item.slug === sub)
-  const products = subcategory ? subcategory.products : category.products
+  const products = subcategory ? subcategory.products.map((product) => withSubcategoryLabel(product, subcategory.name)) : category.products
   const [collapsedSlug, setCollapsedSlug] = useState(null)
 
   useEffect(() => {
