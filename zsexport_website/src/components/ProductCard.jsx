@@ -36,16 +36,6 @@ export default function ProductCard({ product, href }) {
           src={product.image}
           loading="lazy"
         />
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 flex items-center justify-center"
-        >
-          <span className="w-14 h-14 flex items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm shadow-lg ring-1 ring-white/40 group-hover:bg-black/65 group-hover:scale-110 transition-all duration-300">
-            <span className="material-symbols-outlined text-[28px]">
-              {href ? 'visibility' : 'zoom_in'}
-            </span>
-          </span>
-        </span>
       </div>
       <div className="p-space-lg">
         <span className="font-label-caps text-label-caps uppercase tracking-widest text-secondary block mb-space-2xs">
