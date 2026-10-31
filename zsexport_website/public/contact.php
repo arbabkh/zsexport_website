@@ -1,7 +1,7 @@
 <?php
 // Contact form handler. Sends enquiries to $to using the server's built-in mail().
 // TESTING: currently sends to the developer. Before going live change to 'exports@zsexport.com'.
-$to = 'developer.zaidkhan@gmail.com';
+$to = 'exports@zsexport.com';
 
 header('Content-Type: application/json');
 
