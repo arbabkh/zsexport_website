@@ -99,6 +99,18 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        <p className="mt-space-lg pt-space-md border-t border-outline-variant text-center font-body-sm text-body-sm text-on-surface">
+          Website created by{' '}
+          <a
+            className="font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+            href="https://brainofire.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Brainofire
+          </a>
+        </p>
       </div>
     </footer>
   )

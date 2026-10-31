@@ -10,21 +10,39 @@ const initialForm = {
   category: '',
   scope: '',
   nda: false,
+  website: '',
 }
 
 export default function TradeInquiry() {
   const [form, setForm] = useState(initialForm)
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (field) => (event) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
     setForm((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    setSubmitted(true)
-    setForm(initialForm)
+    setSending(true)
+    setError('')
+    setSubmitted(false)
+    try {
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!response.ok) throw new Error('Request failed')
+      setSubmitted(true)
+      setForm(initialForm)
+    } catch {
+      setError(`We could not send your enquiry. Please email us directly at ${BRAND.email}.`)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -74,6 +92,16 @@ export default function TradeInquiry() {
             {/* The Trade RFQ Form */}
             <div className="lg:col-span-7">
               <form className="flex flex-col gap-space-lg" onSubmit={handleSubmit}>
+                <input
+                  aria-hidden="true"
+                  autoComplete="off"
+                  className="hidden"
+                  name="website"
+                  tabIndex={-1}
+                  type="text"
+                  value={form.website}
+                  onChange={handleChange('website')}
+                />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
                   <div className="flex flex-col">
                     <label className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mb-1 font-semibold">
@@ -167,9 +195,12 @@ export default function TradeInquiry() {
                   whileTap={{ scale: 0.97 }}
                   className="self-start inline-flex items-center justify-center px-space-2xl py-space-md bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.18em] shadow-md hover:bg-surface-container-highest hover:text-on-surface transition-all duration-300"
                   type="submit"
+                  disabled={sending}
                 >
-                  Send Trade Enquiry
+                  {sending ? 'Sending...' : 'Send Trade Enquiry'}
                 </motion.button>
+
+                {error && <div className="p-space-md bg-surface-container-high text-error font-body-sm">{error}</div>}
 
                 <AnimatePresence>
                   {submitted && (
