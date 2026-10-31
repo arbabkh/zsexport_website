@@ -2,6 +2,8 @@
 // Contact form handler. Sends enquiries to $to using the server's built-in mail().
 // TESTING: currently sends to the developer. Before going live change to 'exports@zsexport.com'.
 $to = 'exports@zsexport.com';
+// Cloudflare Turnstile secret. Default is Cloudflare's always-pass test secret; set TURNSTILE_SECRET in the server environment for production.
+$turnstileSecret = getenv('TURNSTILE_SECRET') ?: '1x0000000000000000000000000000000AA';
 
 header('Content-Type: application/json');
 
@@ -10,6 +12,25 @@ $clean = fn($k) => trim(str_replace(["\r", "\n"], ' ', (string)($in[$k] ?? '')))
 
 // Hidden spam-trap field: pretend success for bots
 if (!empty($in['website'])) { echo '{"success":true}'; exit; }
+
+// Verify the Turnstile captcha token with Cloudflare
+$captchaToken = (string)($in['captchaToken'] ?? '');
+$captchaOk = false;
+if ($captchaToken !== '') {
+    $ctx = stream_context_create(['http' => [
+        'method' => 'POST',
+        'header' => 'Content-Type: application/x-www-form-urlencoded',
+        'content' => http_build_query(['secret' => $turnstileSecret, 'response' => $captchaToken, 'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '']),
+        'timeout' => 5,
+    ]]);
+    $res = @file_get_contents('https://challenges.cloudflare.com/turnstile/v0/siteverify', false, $ctx);
+    $captchaOk = $res !== false && !empty((json_decode($res, true) ?: [])['success']);
+}
+if (!$captchaOk) {
+    http_response_code(400);
+    echo '{"message":"Security check failed. Please try again."}';
+    exit;
+}
 
 $name = $clean('name');
 $email = $clean('email');

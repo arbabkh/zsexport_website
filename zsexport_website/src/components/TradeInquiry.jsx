@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BRAND, RFQ_CATEGORIES } from '../data/siteData'
 import { getEmailError } from '../utils/emailValidation'
 import Reveal from './Reveal'
@@ -14,12 +14,59 @@ const initialForm = {
   website: '',
 }
 
+// Cloudflare Turnstile (free). Default is Cloudflare's always-pass test key; set VITE_TURNSTILE_SITE_KEY in production.
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'
+const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+
+function loadTurnstile() {
+  if (window.turnstile) return Promise.resolve(window.turnstile)
+  return new Promise((resolve, reject) => {
+    let script = document.querySelector(`script[src="${TURNSTILE_SRC}"]`)
+    if (!script) {
+      script = document.createElement('script')
+      script.src = TURNSTILE_SRC
+      script.async = true
+      document.head.appendChild(script)
+    }
+    script.addEventListener('load', () => resolve(window.turnstile))
+    script.addEventListener('error', reject)
+  })
+}
+
 export default function TradeInquiry() {
   const [form, setForm] = useState(initialForm)
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const [emailError, setEmailError] = useState('')
+  const [captchaToken, setCaptchaToken] = useState('')
+  const captchaRef = useRef(null)
+  const widgetId = useRef(null)
+
+  useEffect(() => {
+    let cancelled = false
+    loadTurnstile()
+      .then((turnstile) => {
+        if (cancelled || !captchaRef.current || widgetId.current !== null) return
+        widgetId.current = turnstile.render(captchaRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: setCaptchaToken,
+          'expired-callback': () => setCaptchaToken(''),
+          'error-callback': () => setCaptchaToken(''),
+        })
+      })
+      .catch(() => setError('Could not load the security check. Please refresh the page.'))
+    return () => {
+      cancelled = true
+      if (widgetId.current !== null && window.turnstile) window.turnstile.remove(widgetId.current)
+      widgetId.current = null
+    }
+  }, [])
+
+  const resetCaptcha = () => {
+    setCaptchaToken('')
+    if (widgetId.current !== null && window.turnstile) window.turnstile.reset(widgetId.current)
+  }
 
   const handleChange = (field) => (event) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
@@ -29,9 +76,25 @@ export default function TradeInquiry() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const emailProblem = getEmailError(form.email)
+    const trimmed = {
+      ...form,
+      name: form.name.trim(),
+      email: form.email.trim(),
+      company: form.company.trim(),
+      scope: form.scope.trim(),
+    }
+    setForm(trimmed)
+    const emailProblem = getEmailError(trimmed.email)
     if (emailProblem) {
       setEmailError(emailProblem)
+      return
+    }
+    if (!trimmed.name || !trimmed.company || !trimmed.scope) {
+      setError('Please fill in all required fields.')
+      return
+    }
+    if (!captchaToken) {
+      setError('Please complete the security check.')
       return
     }
     setSending(true)
@@ -41,7 +104,7 @@ export default function TradeInquiry() {
       const response = await fetch('/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...trimmed, captchaToken }),
       })
       if (!response.ok) throw new Error('Request failed')
       setSubmitted(true)
@@ -49,6 +112,7 @@ export default function TradeInquiry() {
     } catch {
       setError(`We could not send your enquiry. Please email us directly at ${BRAND.email}.`)
     } finally {
+      resetCaptcha()
       setSending(false)
     }
   }
@@ -205,6 +269,7 @@ export default function TradeInquiry() {
                     We request an executed Mutual Non-Disclosure Agreement (NDA) prior to sharing CAD drawings.
                   </label>
                 </div>
+                <div ref={captchaRef} />
                 <motion.button
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
