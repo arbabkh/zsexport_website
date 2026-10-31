@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { BRAND, RFQ_CATEGORIES } from '../data/siteData'
+import { getEmailError } from '../utils/emailValidation'
 import Reveal from './Reveal'
 
 const initialForm = {
@@ -18,14 +19,21 @@ export default function TradeInquiry() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
+  const [emailError, setEmailError] = useState('')
 
   const handleChange = (field) => (event) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
     setForm((prev) => ({ ...prev, [field]: value }))
+    if (field === 'email') setEmailError('')
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    const emailProblem = getEmailError(form.email)
+    if (emailProblem) {
+      setEmailError(emailProblem)
+      return
+    }
     setSending(true)
     setError('')
     setSubmitted(false)
@@ -127,7 +135,14 @@ export default function TradeInquiry() {
                       type="email"
                       value={form.email}
                       onChange={handleChange('email')}
+                      onBlur={() => form.email && setEmailError(getEmailError(form.email))}
+                      aria-invalid={!!emailError}
                     />
+                    {emailError && (
+                      <p className="text-error text-sm mt-1" role="alert">
+                        {emailError}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">

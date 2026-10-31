@@ -17,6 +17,24 @@ $company = $clean('company');
 $category = $clean('category');
 $scope = trim((string)($in['scope'] ?? ''));
 
+// Reject disposable / placeholder email domains (keep in sync with src/utils/emailValidation.js)
+$blockedDomains = ['mailinator.com','guerrillamail.com','guerrillamail.net','sharklasers.com','grr.la','10minutemail.com','tempmail.com','temp-mail.org','throwawaymail.com','yopmail.com','trashmail.com','getnada.com','maildrop.cc','dispostable.com','fakeinbox.com','mailnesia.com','mintemail.com','spamgourmet.com','tempinbox.com','mohmal.com','example.com','example.org','example.net','test.com','test.org','test.net','testing.com','fake.com','fakemail.com','noemail.com','nomail.com','asdf.com'];
+$blockedLabels = ['mailinator','yopmail','guerrillamail','tempmail','test','example','localhost','invalid'];
+$blockedTlds = ['test','example','invalid','localhost','local'];
+$domain = strtolower(substr(strrchr($email, '@') ?: '', 1));
+$labels = explode('.', $domain);
+$isJunkEmail = false;
+foreach ($blockedDomains as $d) {
+    if ($domain === $d || substr($domain, -strlen($d) - 1) === ".$d") { $isJunkEmail = true; break; }
+}
+if (in_array(end($labels), $blockedTlds, true) || in_array($labels[0], $blockedLabels, true)) $isJunkEmail = true;
+
+if ($isJunkEmail) {
+    http_response_code(400);
+    echo '{"message":"Please use a genuine business email address"}';
+    exit;
+}
+
 if (!$name || !$company || !$category || !$scope || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo '{"message":"Invalid input"}';
