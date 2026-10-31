@@ -2,10 +2,20 @@
 // Contact form handler. Sends enquiries to $to using the server's built-in mail().
 // TESTING: currently sends to the developer. Before going live change to 'exports@zsexport.com'.
 $to = 'exports@zsexport.com';
-// Cloudflare Turnstile secret. Default is Cloudflare's always-pass test secret; set TURNSTILE_SECRET in the server environment for production.
-$turnstileSecret = getenv('TURNSTILE_SECRET') ?: '1x0000000000000000000000000000000AA';
+// Secret used to sign math-captcha answers. Set CAPTCHA_SECRET in the server environment, or replace this default with a long random string.
+$captchaSecret = getenv('CAPTCHA_SECRET') ?: 'b00ea8172351d46a3ae7a6f60997d866927bfa6474021c3f80e2959d16834935';
+$sign = fn($exp, $answer) => hash_hmac('sha256', "$exp|$answer", $captchaSecret);
 
 header('Content-Type: application/json');
+
+// GET: issue a new math question. The answer is never sent; only a signed, expiring token.
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $a = random_int(1, 9);
+    $b = random_int(1, 9);
+    $exp = time() + 1800;
+    echo json_encode(['question' => "$a + $b =", 'token' => $exp . '.' . $sign($exp, $a + $b)]);
+    exit;
+}
 
 $in = json_decode(file_get_contents('php://input'), true) ?: [];
 $clean = fn($k) => trim(str_replace(["\r", "\n"], ' ', (string)($in[$k] ?? '')));
@@ -13,19 +23,11 @@ $clean = fn($k) => trim(str_replace(["\r", "\n"], ' ', (string)($in[$k] ?? '')))
 // Hidden spam-trap field: pretend success for bots
 if (!empty($in['website'])) { echo '{"success":true}'; exit; }
 
-// Verify the Turnstile captcha token with Cloudflare
-$captchaToken = (string)($in['captchaToken'] ?? '');
-$captchaOk = false;
-if ($captchaToken !== '') {
-    $ctx = stream_context_create(['http' => [
-        'method' => 'POST',
-        'header' => 'Content-Type: application/x-www-form-urlencoded',
-        'content' => http_build_query(['secret' => $turnstileSecret, 'response' => $captchaToken, 'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '']),
-        'timeout' => 5,
-    ]]);
-    $res = @file_get_contents('https://challenges.cloudflare.com/turnstile/v0/siteverify', false, $ctx);
-    $captchaOk = $res !== false && !empty((json_decode($res, true) ?: [])['success']);
-}
+// Verify the math captcha answer against the signed token
+[$exp, $sig] = array_pad(explode('.', (string)($in['captchaToken'] ?? ''), 2), 2, '');
+$answer = trim((string)($in['captchaAnswer'] ?? ''));
+$captchaOk = ctype_digit($exp) && (int)$exp >= time() && ctype_digit($answer)
+    && hash_equals($sign($exp, (int)$answer), $sig);
 if (!$captchaOk) {
     http_response_code(400);
     echo '{"message":"Security check failed. Please try again."}';
